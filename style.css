@@ -1,0 +1,108 @@
+.featured-products {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.featured-products h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.products-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: calc(25% - 20px);
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.product:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+}
+
+
+/* стилі футера */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    font-size: 16px;
+}
+
+.footer-top h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.footer-top p {
+    margin-bottom: 20px;
+}
+
+.footer-top form input[type="email"] {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+.footer-top form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.social-links a i:hover {
+    color: #fbd602;
+}
