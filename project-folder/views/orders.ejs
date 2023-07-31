@@ -1,0 +1,33 @@
+<!-- views/orders.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замовлення</title>
+</head>
+
+<body>
+    <h1>Замовлення</h1>
+    <ul>
+        <% orders.forEach(order=> { %>
+            <li>
+                <h3>
+                    <%= order.name %>
+                </h3>
+                <p>Email: <%= order.email %>
+                </p>
+                <p>Адреса доставки: <%= order.address %>
+                </p>
+                <p>Загальна сума: <%= order.totalPrice %>
+                </p>
+                <p>Дата: <%= order.date.toDateString() %>
+                </p>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>
