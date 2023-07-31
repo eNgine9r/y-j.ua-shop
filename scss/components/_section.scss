@@ -1,0 +1,27 @@
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+    @include for-desktop-up{
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+.section__title {
+    margin-bottom: 30px;
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.18;
+    text-align: center;
+
+    @include for-desktop-up{
+        margin-bottom: 50px;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.17;
+        text-align: center;
+        color: var(--title-text-color);
+    }
+}
