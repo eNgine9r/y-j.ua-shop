@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const ejs = require('ejs');
+const mongoose = require('mongoose');
 
 app.set('view engine', 'ejs');
 
@@ -23,8 +25,8 @@ app.listen(port, () => {
 
 // app.js
 
-const mongoose = require('mongoose');
-const mongoURI = 'mongodb://localhost:27017/your-database-name'; // Замініть 'your-database-name' на назву вашої бази даних
+
+const mongoURI = 'mongodb://localhost:27017/db'; // Замініть 'your-database-name' на назву вашої бази даних
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Підключено до бази даних'))
