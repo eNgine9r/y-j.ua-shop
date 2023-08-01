@@ -3,17 +3,21 @@ const app = express();
 const port = 3000;
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const Product = require('./models/product')
 
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.render('home', {
-    pageTitle: 'Головна',
-    // Тут ви можете передавати інші необхідні дані для відображення на сторінці.
-  });
+// Маршрут для головної сторінки
+app.get('/', async (req, res) => {
+  try {
+    const products = await Product.find().limit(8); // Отримати перші 8 товарів для відображення на головній сторінці
+    res.render('home', { products }); // Передати список товарів у шаблон
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
 });
 
 const path = require('path');
@@ -26,7 +30,7 @@ app.listen(port, () => {
 // app.js
 
 
-const mongoURI = 'mongodb://localhost:27017/db'; // Замініть 'your-database-name' на назву вашої бази даних
+const mongoURI = 'mongodb+srv://Serhii:AwH42O0vhBZSPne2@cluster0.2g2l5nx.mongodb.net/test?retryWrites=true&w=majority'; // Замініть 'your-database-name' на назву вашої бази даних
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Підключено до бази даних'))

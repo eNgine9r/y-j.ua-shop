@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Product = require('../models/productModel');
+const Product = require('../models/product');
 
 // Маршрут для отримання всіх товарів
 router.get('/products', async (req, res) => {

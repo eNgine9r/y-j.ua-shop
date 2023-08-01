@@ -12,14 +12,14 @@
 <body>
     <h1>Список товарів</h1>
     <ul>
-        <% products.forEach(product=> { %>
+        % products.forEach(product=> { %
             <li>
-                <a href="/products/<%= product._id %>">
+                <a href="/products/%= product._id %">
                     <%= product.name %>
                 </a> - <%= product.price %>
                     <button onclick="addToCart('<%= product._id %>')">Додати до кошика</button>
             </li>
-            <% }) %>
+            % }) %
     </ul>
 
     <script>

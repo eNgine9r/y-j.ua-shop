@@ -1,13 +1,11 @@
-const Product = require('./models/product');
+const mongoose = require('mongoose');
 
-const newProduct = new Product({
-  name: 'Срібний кулон з кришталем',
-  description: 'Прекрасний кулон зі срібла та кришталем',
-  price: 29.99,
-  image: 'path/to/image.jpg',
-  category: 'Кулони',
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String },
+  price: { type: Number, required: true },
+  image: { type: String },
+  category: { type: String },
 });
 
-newProduct.save()
-  .then(() => console.log('Товар додано до бази даних'))
-  .catch(err => console.error('Помилка при додаванні товару:', err));
+module.exports = mongoose.model('Product', productSchema);
