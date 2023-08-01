@@ -6,32 +6,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Головна</title>
+  <title>Назва вашого сайту</title>
 </head>
 
 <body>
-  <h1>Назва вашого сайту</h1>
-  <!-- Заголовок та опис вашого інтернет-магазину -->
+  <header>
+    <!-- Навігаційне меню -->
+  </header>
 
-  <div class="featured-products">
-    <h2>Вибрані товари</h2>
-    <div class="products-wrapper">
-      <% products.forEach(product=> { %>
-        <div class="product">
-          <img src="<%= product.image %>" alt="<%= product.name %>">
-          <h3>
-            <%= product.name %>
-          </h3>
-          <p class="price">$<%= product.price.toFixed(2) %>
-          </p>
-          <a href="#" class="btn" onclick="addToCart('<%= product._id %>')">Додати до кошика</a>
-        </div>
-        <% }) %>
+  <main>
+    <!-- Головний банер -->
+    <div class="hero-image">
+      <h1>Назва вашого сайту</h1>
+      <p>Текст про ваш інтернет-магазин</p>
+      <a href="#">Детальніше</a>
     </div>
-  </div>
 
-  <!-- Додайте інші блоки та елементи для головної сторінки -->
+    <!-- Вибрані товари -->
+    <section class="featured-products">
+      <div class="container">
+        <h2>Вибрані товари</h2>
+        <div class="products-wrapper">
+          <% products.forEach(product=> { %>
+            <div class="product">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+              <h3>
+                <%= product.name %>
+              </h3>
+              <p class="price">$<%= product.price %>
+              </p>
+              <button onclick="addToCart('<%= product._id %>')">Додати до кошика</button>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <!-- Футер -->
+  </footer>
+
+  <!-- Підключення зовнішнього скрипту -->
+  <script src="/js/scripts.js"></script>
 </body>
 
 </html>
